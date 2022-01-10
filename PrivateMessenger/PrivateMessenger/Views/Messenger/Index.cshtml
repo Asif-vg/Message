@@ -1,0 +1,19 @@
+﻿@model List<CustomUser>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>Friends list</h1>
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li><a asp-controller="Messenger" asp-action="Chat" asp-route-recieverId="@item.Id">@item.Email</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
